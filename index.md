@@ -1,37 +1,81 @@
-## Welcome to GitHub Pages
+### [FRIEND.cpp](https://ideone.com/jQADbi)
 
-You can use the [editor on GitHub](https://github.com/ppap-1264589/Bitmasking/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+``` C++
+///Template created by PPAP_1264589
+#include <bits/stdc++.h>
+#define Task              "DRAFT"
+#define ll                long long
+#define pii               pair<int, int>
+#define f                 first
+#define s                 second
+#define MP                make_pair
+#define rollup(i,a,b)     for (int i = (a); i <= (b); i++)
+#define rolldown(i,a,b)   for (int i = (a); i >= (b); i--)
+#define bit(x, i)         ((x >> (i)) & 1)
+using namespace std;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+void setFile(){
+    ios_base::sync_with_stdio(0), cin.tie(nullptr), cout.tie(nullptr);
+    freopen (Task".inp", "r", stdin);
+    freopen (Task".out", "w", stdout);
+}
 
-### Markdown
+int n,q;
+int S, F;
+int c[16][16];
+int dp[1 << 16]; //bieu dien trang thai nguoi i -> j va j -> i
+map<int, pii> mm;
+int sum = 0;
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+void in(){
+    cin >> S >> F;
+    cin >> n >> q;
+    int u,v,w;
+    memset(dp, -1, sizeof(dp));
+    while (cin >> u >> v >> w){
+        u--, v--;
+        c[u][v] = c[v][u] += w;
+        sum += w;
+        int pr = (1 << u) + (1 << v);
+        dp[pr] += w;
+    }
+}
 
-```markdown
-Syntax highlighted code block
+void dp_bit(){
+    rollup(x, 0, (1 << n)-1){
+        rollup(i, 0, n-1){
+            rollup(j, i+1, n-1){ 
+                if (bit(x, i) && bit(x, j)){ 
+                    int v = x &~ ((1 << i) | (1 << j));
+                    if (dp[x] <= dp[v] + c[i][j]){
+                        dp[x] = dp[v] + c[i][j];
+                        mm[x] = MP(i+1, j+1);
+                    }
+                }
+            }
+        }
+    }
 
-# Header 1
-## Header 2
-### Header 3
+    int s = dp[(1 << n) - 1];
+    cout << (sum - s)*F + s*S;
+}
 
-- Bulleted
-- List
+void Trace(){
+    int fi = (1 << n) - 1;
+    while (fi){
+        int a = mm[fi].f;
+        int b = mm[fi].s;
+        cout << a << " " << b << "\n";
+        fi = fi - (1 << (a-1)) - (1 << (b-1));
+    }
+}
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+int main (){
+    setFile();
+    in();
+    dp_bit();
+    cout << endl;
+    Trace();
+    return 0;
+}
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ppap-1264589/Bitmasking/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
