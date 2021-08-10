@@ -4,6 +4,8 @@
 
 ### Lời giải
 
+### Code : FRIEND.cpp
+
 ``` c++
 ///Template created by PPAP_1264589
 #include <bits/stdc++.h>
@@ -17,12 +19,6 @@
 #define rolldown(i,a,b)   for (int i = (a); i >= (b); i--)
 #define bit(x, i)         ((x >> (i)) & 1)
 using namespace std;
-
-void setFile(){
-    ios_base::sync_with_stdio(0), cin.tie(nullptr), cout.tie(nullptr);
-    freopen (Task".inp", "r", stdin);
-    freopen (Task".out", "w", stdout);
-}
 
 int n,q;
 int S, F;
@@ -75,7 +71,7 @@ void Trace(){
 }
 
 int main (){
-    setFile();
+    ios_base::sync_with_stdio(0), cin.tie(nullptr), cout.tie(nullptr);
     in();
     dp_bit();
     cout << endl;
