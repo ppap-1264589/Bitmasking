@@ -1,3 +1,7 @@
+[Trang chủ](https://ppap-1264589.github.io/interesting-solution)
+
+[Bài Toán] [FRIENDS.pdf](https://github.com/ppap-1264589/Bitmasking/files/6961834/FRIENDS.pdf)
+
 ### FRIEND.cpp
 
 ``` c++
