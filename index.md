@@ -1,6 +1,6 @@
-### [FRIEND.cpp](https://ideone.com/jQADbi)
+### FRIEND.cpp
 
-``` C++
+``` c++
 ///Template created by PPAP_1264589
 #include <bits/stdc++.h>
 #define Task              "DRAFT"
