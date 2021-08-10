@@ -23,7 +23,7 @@ void setFile(){
 int n,q;
 int S, F;
 int c[16][16];
-int dp[1 << 16]; //bieu dien trang thai nguoi i -> j va j -> i
+int dp[1 << 16];
 map<int, pii> mm;
 int sum = 0;
 
