@@ -1,6 +1,8 @@
-[Trang chủ](https://ppap-1264589.github.io/interesting-solution)
+## [Trang chủ](https://ppap-1264589.github.io/interesting-solution)
 
-[Bài Toán](https://github.com/ppap-1264589/Bitmasking/files/6961834/FRIENDS.pdf)
+### [Bài Toán](https://github.com/ppap-1264589/Bitmasking/files/6961834/FRIENDS.pdf)
+
+## Lời giải
 
 ### FRIEND.cpp
 
