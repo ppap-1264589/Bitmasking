@@ -1,3 +1,5 @@
+## [Trang chủ](https://ppap-1264589.github.io/interesting-solution)
+
 ## RMQ2D
 
 ### [Bài Toán](https://github.com/ppap-1264589/Bitmasking/files/6962415/FRIENDS.pdf)
@@ -79,4 +81,3 @@ int main (){
     return 0;
 }
 ```
-## [Trang chủ](https://ppap-1264589.github.io/interesting-solution)
